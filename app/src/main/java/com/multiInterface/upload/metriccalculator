@@ -1,0 +1,208 @@
+package com.multiInterface;
+
+import android.content.Context;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.Socket;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.multiInterface.upload.MultipartUploadRequest;
+import com.multiInterface.upload.UploadFile;
+import com.multiInterface.upload.UploadServiceBroadcastReceiver;
+
+import javax.net.ssl.HttpsURLConnection;
+
+/**
+ * Created by t-taman on 5/24/2016.
+ */
+public class MetricCalculator {
+    private static final String TAG = "Test";
+    private int maxPacketNum;
+    private ArrayList<Long> offsetedDelayList;
+    private int packetCount;
+    private int outOfOrderCount;
+    public ArrayList<Integer> packetIndexList;
+    public long minDelay;
+    public ArrayList<Double> jitterList;
+    public ArrayList<Long> receiveTimestampList;
+
+    public int experimentType;
+    public char clientType;
+    public int burstCount;
+    public int seq;
+    public Context context;
+    String fileName;
+    public String clientIp;
+
+
+
+
+    public MetricCalculator(int burstSize, int seq, char clientType, Context context, int experimentType) {
+        maxPacketNum = -1;
+        offsetedDelayList = new ArrayList<Long>();
+        packetCount = 0;
+        outOfOrderCount = 0;
+        minDelay = Long.MAX_VALUE;
+        packetIndexList = new ArrayList<Integer>();
+        jitterList = new ArrayList<Double>();
+        receiveTimestampList = new ArrayList<Long>();
+        receiveTimestampList = new ArrayList<Long>();
+        burstCount = burstSize;
+        this.seq = seq;
+        this.context = context;
+        this.clientType = clientType;
+        this.experimentType = experimentType;
+    }
+
+    /**
+     * Out-of-order packets is defined as arriving packets with sequence numbers
+     * smaller than their predecessors.
+     * @param packetNum: packet number in burst sequence
+     * @param timestamp: estimated one-way delay(contains clock offset)
+     */
+    public void addPacket(int packetNum, long timestamp) {
+        long receiveTimestamp = System.currentTimeMillis();
+        long delay = receiveTimestamp - timestamp;
+
+        if ( packetNum > maxPacketNum ) {
+            maxPacketNum = packetNum;
+        }
+        else {
+            outOfOrderCount++;
+        }
+
+        if(jitterList.size() == 0){
+            jitterList.add(0.0);
+        }
+        else{
+            double lastJitter = jitterList.get(jitterList.size()-1);
+            long lastDelay = offsetedDelayList.get(offsetedDelayList.size()-1);
+            double jitter =  lastJitter + (Math.abs(delay-lastDelay)-lastJitter)/16;
+            //Logger.d(String.valueOf(lastDelay) +',' + delay + ',' + lastJitter + ',' + jitter);
+            jitterList.add(jitter);
+        }
+        offsetedDelayList.add(delay);
+        receiveTimestampList.add(receiveTimestamp);
+
+        /*
+        if(delay < minDelay)
+            minDelay = delay;
+
+        jitterList.add(delay-minDelay);
+
+        */
+        packetIndexList.add(packetNum);
+
+        packetCount++;
+    }
+    /**
+     * Out-of-order ratio is defined as the ratio between the number of
+     * out-of-order packets and the total number of packets.
+     * @return the inversion number of the current UDP burst
+     */
+    public double calculateOutOfOrderRatio() {
+        if (packetCount != 0) {
+            return (double) outOfOrderCount / packetCount;
+        } else {
+            return 0.0;
+        }
+    }
+
+    /**
+     * Calculate jitter as the standard deviation of one-way delays[RFC3393]
+     * We can assume the clock offset between server and client is constant in
+     * a short period(several milliseconds) since typical oscillators have no
+     * more than 100ppm of frequency error , then it will be cancelled out
+     * during the calculation process
+     * @return the jitter of UDP burst
+     */
+    public long calculateJitter() {
+        if ( packetCount > 1 ) {
+            double offsetedDelay_mean = 0;
+            for ( long offsetedDelay : offsetedDelayList ) {
+                offsetedDelay_mean += (double)offsetedDelay / packetCount;
+            }
+
+            double jitter = 0;
+            for ( long offsetedDelay : offsetedDelayList ) {
+                jitter += ((double)offsetedDelay - offsetedDelay_mean)
+                        * ((double)offsetedDelay - offsetedDelay_mean)  / (packetCount - 1);
+            }
+            jitter = Math.sqrt(jitter);
+
+            return (long)jitter;
+        }
+        else {
+            return 0;
+        }
+    }
+
+    public double calculateMeanDelay() {
+        double offsetedDelay_mean = 0;
+        for ( long offsetedDelay : offsetedDelayList ) {
+            offsetedDelay_mean += (double)offsetedDelay / packetCount;
+        }
+        return offsetedDelay_mean;
+    }
+
+    /**
+     * File format
+     * Summary:  Burst Count, Loss, Overall Jitter, Minimum Delay, Out of Order packets
+     * Each Packet: Number, Delay, Jitter,
+     * @throws UnsupportedEncodingException
+     * @throws FileNotFoundException
+     */
+    public void logInfo() throws IOException {
+
+        String fileDir = context.getApplicationContext().getFilesDir().getAbsolutePath();
+        String id = Config.ANDROID_ID + '_' + String.valueOf(Config.seq);
+        Logger.d("Android id : " + Config.ANDROID_ID + " id : " + id);
+        fileName =  id + + '_' + String.valueOf(experimentType) + '_' + String.valueOf(clientType);
+        String fullPath = fileDir + '/' + fileName;
+
+        if(fileName == null){
+            Logger.d("error in filename");
+            return;
+        }
+
+        FileOutputStream fileos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileos);
+        //outputStreamWriter.write(burstCount + "\t" + packetCount + "\t" +  calculateJitter() +
+        //        "\t" +  minDelay + "\t"	 + outOfOrderCount + "\n");
+
+        for(int i = 0; i < packetCount; i++) {
+            String strDelay = String.valueOf(offsetedDelayList.get(i));
+            String strJitter = String.valueOf(jitterList.get(i));
+            String strPacketNum = String.valueOf(packetIndexList.get(i));
+            String strReceiveList = String.valueOf(receiveTimestampList.get(i));
+            outputStreamWriter.write(strPacketNum+"\t"+strDelay+'\t' + strJitter + '\t' + strReceiveList + '\n');
+        }
+        outputStreamWriter.close();
+        System.out.println("Wrote: " + fileName);
+        new Utility().uploadFile(fullPath, context);
+    }
+}

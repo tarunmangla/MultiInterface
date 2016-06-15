@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/app/build/intermediates/res/merged/release/mipmap-xxhdpi-v4/ic_launcher.png",
+        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    }
+]

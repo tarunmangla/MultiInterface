@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.multiInterface.NetworkTools">
+
+
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Measurement"
+        android:id="@+id/startToggleButton"
+        android:checked="false"
+        android:textOff="Start"
+        android:textOn="Stop"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:hint="Mobile send result text"
+        android:id="@+id/textViewMobileSend"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/startToggleButton"
+        android:layout_toStartOf="@+id/startToggleButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:hint="WiFi send result text"
+        android:id="@+id/textViewWiFiSend"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textViewMobileSend"
+        android:layout_toRightOf="@+id/startToggleButton"
+        android:layout_toEndOf="@+id/startToggleButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:id="@+id/textView2"
+        android:editable="false"
+        android:textSize="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WiFi"
+        android:id="@+id/textView3"
+        android:editable="false"
+        android:textSize="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textViewWiFiSend"
+        android:layout_alignEnd="@+id/textViewWiFiSend" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/currentProgress"
+        android:hint="Current Progress"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/waitTime"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/currentProgress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:hint="Mobile receive result text"
+        android:id="@+id/textViewMobileReceive"
+        android:layout_above="@+id/currentProgress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textViewMobileSend"
+        android:layout_alignEnd="@+id/textViewMobileSend" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:hint="WiFi receive result text"
+        android:id="@+id/textViewWifiReceive"
+        android:layout_alignBottom="@+id/textViewMobileReceive"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/textViewWiFiSend"
+        android:layout_alignStart="@+id/textViewWiFiSend"
+        android:layout_alignTop="@+id/textViewMobileReceive" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/waitTime"
+        android:weightSum="1"
+        android:id ="@+id/options"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/radioBackground">
+
+        <RadioButton android:id="@+id/radioBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Run in background"
+            android:onClick="onRadioButtonClicked"
+            android:layout_gravity="center_vertical" />
+
+        <RadioButton android:id="@+id/radioSingle"
+            android:layout_width="135dp"
+            android:layout_height="71dp"
+            android:text="Single Measurement"
+            android:onClick="onRadioButtonClicked"
+            android:layout_weight="0.38"
+            android:layout_gravity="center_vertical" />
+
+    </RadioGroup>
+
+
+</RelativeLayout>
+
+

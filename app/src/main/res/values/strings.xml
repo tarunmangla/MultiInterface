@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Multi Interface Measurement</string>
+    <string name="notification_title">MultiInterface Enabled</string>
+    <string name="notification_text">Click to change options</string>
+</resources>
