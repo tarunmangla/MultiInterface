@@ -15,6 +15,7 @@ import android.telephony.CellInfoLte;
 import android.telephony.CellInfoWcdma;
 import android.telephony.CellLocation;
 import android.telephony.CellSignalStrength;
+import android.telephony.CellSignalStrengthLte;
 import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 
@@ -102,6 +103,8 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
         public ArrayList<Integer> asuLevelList;
         public ArrayList<String> timeStampList;
         public ArrayList<String> networkTypeList;
+        public ArrayList<Integer> rsrpList;
+        public ArrayList<Integer> rsrqList;
 
         public MobileMetric() {
             signalStrengthList = new ArrayList<Integer>();
@@ -197,6 +200,8 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
                 TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
                 CellSignalStrength signalStrength = null;
 
+                int rsrp = 0;
+                int rsrq = 0;
                 if(telephonyManager.getAllCellInfo().size() > 0) {
                     CellInfo cellInfo = telephonyManager.getAllCellInfo().get(0);
                     if (cellInfo instanceof CellInfoGsm) {
@@ -205,6 +210,9 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
                         signalStrength = ((CellInfoWcdma) cellInfo).getCellSignalStrength();
                     } else if (cellInfo instanceof CellInfoLte) {
                         signalStrength = ((CellInfoLte) cellInfo).getCellSignalStrength();
+                        String cellSignalStrengthLteStr = ((CellInfoLte) cellInfo).getCellSignalStrength().toString();
+                        rsrp = Integer.valueOf(utility.stringBetweenSubstring(cellSignalStrengthLteStr, "rsrp=", "\t"));
+                        rsrq = Integer.valueOf(utility.stringBetweenSubstring(cellSignalStrengthLteStr, "rsrq=", "\t"));
                     } else if (cellInfo instanceof CellInfoCdma) {
                         signalStrength = ((CellInfoCdma) cellInfo).getCellSignalStrength();
                     } else {
@@ -221,6 +229,8 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
                     mobileMetric.asuLevelList.add(Integer.MAX_VALUE);
                     mobileMetric.signalStrengthList.add(Integer.MAX_VALUE);
                 }
+                mobileMetric.rsrpList.add(rsrp);
+                mobileMetric.rsrqList.add(rsrq);
                 mobileMetric.networkTypeList.add(utility.getNetworkClass(context));
             }
 
