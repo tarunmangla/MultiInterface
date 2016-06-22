@@ -177,10 +177,13 @@ public class Utility {
     public String stringBetweenSubstring(String str, String str1, String str2) {
         int idx1 = str.indexOf(str1) + str1.length();
         if(idx1 == -1)
-            return "-1";
+            return "0";
+
         int idx2 = str.substring(idx1).indexOf(str2) + idx1;
-        if(idx2 == -1)
-            return "-1";
+
+        if(idx2 < idx1)
+            return "0";
+
         return str.substring(idx1, idx2);
     }
 

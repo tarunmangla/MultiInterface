@@ -107,10 +107,12 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
         public ArrayList<Integer> rsrqList;
 
         public MobileMetric() {
-            signalStrengthList = new ArrayList<Integer>();
-            asuLevelList = new ArrayList<Integer>();
-            networkTypeList = new ArrayList<String>();
-            timeStampList = new ArrayList<String>();
+            signalStrengthList = new ArrayList<>();
+            asuLevelList = new ArrayList<>();
+            networkTypeList = new ArrayList<>();
+            timeStampList = new ArrayList<>();
+            rsrpList = new ArrayList<>();
+            rsrqList = new ArrayList<>();
         }
 
     }
@@ -132,9 +134,10 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
         for(int i = 0; i < mobileMetric.signalStrengthList.size(); i++) {
             String timeStamp = mobileMetric.timeStampList.get(i);
             String rssi = String.valueOf(mobileMetric.signalStrengthList.get(i));
-            String asu = String.valueOf(mobileMetric.asuLevelList.get(i));
+            String rsrp = String.valueOf(mobileMetric.rsrpList.get(i));
+            String rsrq = String.valueOf(mobileMetric.rsrqList.get(i));
             String type = mobileMetric.networkTypeList.get(i);
-            outputStreamWriter.write(timeStamp + "\t" + type + "\t" +  rssi+"\t"+asu+"\n");
+            outputStreamWriter.write(timeStamp + "\t" + type + "\t" +  rssi + "\t" + rsrp + "\t" + rsrq + "\n");
         }
         outputStreamWriter.close();
         System.out.println("Wrote: " + mobileFileName);
@@ -187,9 +190,8 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
             Logger.d("Boo! Permission not granted");
         }
 
-
+        Logger.d("Debug: Network Metric " + Config.isMeasurementRunning + " " +  Config.isRunning);
         while(Config.isMeasurementRunning==1) {
-
             wifiInfo = wifiManager.getConnectionInfo();
             wiFiMetric.timeStampList.add(String.valueOf(System.currentTimeMillis()));
             wiFiMetric.linkSpeedList.add(wifiInfo.getLinkSpeed());
@@ -211,8 +213,8 @@ public class NetworkMetricTask extends AsyncTask <Context,Integer, Long>  {
                     } else if (cellInfo instanceof CellInfoLte) {
                         signalStrength = ((CellInfoLte) cellInfo).getCellSignalStrength();
                         String cellSignalStrengthLteStr = ((CellInfoLte) cellInfo).getCellSignalStrength().toString();
-                        rsrp = Integer.valueOf(utility.stringBetweenSubstring(cellSignalStrengthLteStr, "rsrp=", "\t"));
-                        rsrq = Integer.valueOf(utility.stringBetweenSubstring(cellSignalStrengthLteStr, "rsrq=", "\t"));
+                        rsrp = Integer.valueOf(utility.stringBetweenSubstring(cellSignalStrengthLteStr, "rsrp=", " "));
+                        rsrq = Integer.valueOf(utility.stringBetweenSubstring(cellSignalStrengthLteStr, "rsrq=", " "));
                     } else if (cellInfo instanceof CellInfoCdma) {
                         signalStrength = ((CellInfoCdma) cellInfo).getCellSignalStrength();
                     } else {

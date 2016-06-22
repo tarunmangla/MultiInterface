@@ -239,11 +239,11 @@ public class UDPSingleTask extends AsyncTask<Context, Integer, Long> {
         Config.seq = (int) TimeUnit.MILLISECONDS.toSeconds(timeNow);
         Config.isWaiting = 0;
         Config.isClockRunning = 0;
-
+        Logger.d("Debug: Single Task" + Config.isMeasurementRunning + " " + Config.isRunning);
         while (true) {
-
+            Logger.d("Debug: Entered here");
             if (areBothActive()) {
-
+                Logger.d("Debug: Single Task");
                 if(checkWifiUDP() == 0){
                     Logger.d("Debug: UDP Not working");
                 }

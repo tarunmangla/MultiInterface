@@ -1,2 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\internal_impl-23.4.0_02b9160f0607f9c4eaa6b140c6434fea162706cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_2c4834dcef996b0b9f3bcfa909d8e6d7691c8b3d.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_142771d278eaf68843c3c7d08f7dade4617ee8bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-math3\3.4.1\3ac44a8664228384bc68437264cf7c4cf112f579\commons-math3-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="3ac44a8664228384bc68437264cf7c4cf112f579">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\commons-math3-3.4.1_dd8798ea4fa778e52fecf3575dc45898082531e7.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.4.0_d65a253d56c3cb289d2adf5b8e42d3a30148d9d2.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.4.0_800c674fad9011739dd62ef0f24febf17329bb21.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\support-annotations-23.4.0_6a106d54d0e7543963d30e2d6b74d6673471cdbb.jar" />
+    </item>
+    <item
+        jar="C:\Users\t-taman\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.4\5fe28b9518e58819180a43a850fbc0dd24b7c050\commons-lang3-3.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="5fe28b9518e58819180a43a850fbc0dd24b7c050">
+        <dex dex="C:\Users\t-taman\AndroidStudioProjects\MultiInterface\app\build\intermediates\pre-dexed\release\commons-lang3-3.4_3ca53a057b8466aa713ccda6a2252c4b9bc7ff4c.jar" />
+    </item>
+
+</items>

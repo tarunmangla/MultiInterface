@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/app/build/intermediates/res/merged/release/values-hdpi-v4/values-hdpi-v4.xml",
+        "outputFile": "C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterface\\app\\build\\intermediates\\res\\merged\\release\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "file": "C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterface\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "outputFile": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\release\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\release\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -38,7 +38,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "file": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "outputFile": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\release\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\release\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -64,7 +64,33 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "file": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 6,
+                        "endColumn": 13,
+                        "endOffset": 327
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\release\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 6,
+                    "endColumn": 13,
+                    "endOffset": 327
+                },
+                "from": {
+                    "file": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

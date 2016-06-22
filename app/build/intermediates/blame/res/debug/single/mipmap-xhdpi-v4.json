@@ -1,22 +1,26 @@
 [
     {
-        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterface\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterface\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/C:\\Users\\t-taman\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/ic_launcher.png",
-        "source": "/Users/tarunmangla/AndroidStudioProjects/MultiInterfaceFinalVersion/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\tarunmangla\\AndroidStudioProjects\\MultiInterfaceFinalVersion\\C:\\Users\\tarunmangla\\AndroidStudioProjects\\HelloWorld\\C:\\Users\\t-taman\\AndroidStudioProjects\\HelloWorld\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
 ]
